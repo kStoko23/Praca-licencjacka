@@ -1,0 +1,62 @@
+\chapter{Podstawy teoretyczne}
+\par W tym rozdziale zostaną omówione kluczowe aspekty podstaw teoretycznych programowania liniowego (LP) i skutecznego zarządzania zasobami ludzkimi. Wymienione również będą zastosowania LP oraz korzyści płynące z dobrego zarządzania kadrami. Według George'a B. Dantzig'a - twórcy LP - "\textit{programowanie liniowe można postrzegać jako część wielkiego rozwój, jaki dał ludzkości umiejętność formułowania ogólnych celów i wyznaczania ścieżki ich osiągnięcia poprzez szczegółowe decyzje, które należy podjąć, aby „najlepiej” osiągnąć swoje cele w obliczu praktycznych sytuacji o dużej złożoności.}" \parencite{dantzig2002linear}.
+
+\section{Programowanie liniowe - definicja}
+\par Programowanie liniowe (LP, od ang. Linear Programming) jest metodą matematyczną stosowaną do optymalizacji rozmieszczenia ograniczonych zasobów w celu osiągnięcia określonego celu. LP znajduje szerokie zastosowanie w różnych dziedzinach, od zarządzania operacyjnego po inżynierię i ekonomię. Tezę te potwierdza Paraganiha K. \parencite{parganiha2018linear} tłumacząc, że LP nie jest nową nauką i jest użyteczne dla każdej organizacji, której zależy na maksymalizacji przychodów: "\textit{Chociaż wiele organizacji biznesowych widzi programowanie liniowe jako nowa nauka lub najnowsze osiągnięcie w historii matematyki, nie ma nic nowego w maksymalizacji zysku w dowolnej organizacji biznesowej.}"
+    
+\par Definicję programowania liniowego przedstawia Mitchell S. \parencite{pratomoatmojo2020brief}, mówiącą że LP jest techniką tworzącą model, który może zostać użyty do rozwiązania problemu przydzielania zasobów przy założonych ograniczeniach. Mówiąc szerzej, LP to metoda optymalizacji, która pozwala na znajdowanie najlepszego rozwiązania z danego zestawu możliwości, opierając się na matematycznej reprezentacji problemu. W ramach tej metody zarówno funkcja celu, którą należy zminimalizować lub zmaksymalizować, jak i ograniczenia, które definiują dopuszczalne rozwiązania, są przedstawiane za pomocą równań liniowych. Funkcja celu w programowaniu liniowym jest wyrażona jako liniowa kombinacja zmiennych decyzyjnych i może wyglądać w ten sposób: 
+
+\[
+X = \{ x \in \mathbb{R}^n : Ax = b, x > 0 \}
+\]
+\[
+\min z = \langle c, x \rangle
+\]
+
+gdzie:
+\begin{itemize}
+    \item \( X \) oznacza zbiór wszystkich wektorów \( x \) spełniających podane warunki, gdzie każdy wektor \( x \) musi należeć do przestrzeni \( \mathbb{R}^n \) i być dodatni (\( x > 0 \)).
+    \item \( Ax = b \) oznacza system liniowych równań, gdzie \( A \) jest macierzą o wymiarach \( m \times n \), a \( b \) jest wektorem o \( m \) składowych, definiującym wartości po prawej stronie równań.
+    \item \( x > 0 \) wskazuje, że wszystkie elementy wektora \( x \) muszą być większe od zera.
+    \item \( \min z = \langle c, x \rangle \) definiuje funkcję celu, która ma być zminimalizowana. Może zostać zamienione na \( \max z = \langle c, x \rangle \)\( z \) jest wartością funkcji celu, a \( \langle c, x \rangle \) reprezentuje iloczyn skalarny wektora współczynników \( c \) i wektora zmiennych \( x \), określający wkład każdej zmiennej do wartości funkcji celu.
+\end{itemize}
+
+\par Ograniczenia w programowaniu liniowym określają warunki, które muszą być spełnione przez zmienne decyzyjne. Te ograniczenia są również przedstawiane za pomocą równań lub nierówności liniowych. Mogą one dotyczyć na przykład limitów zasobów, wymagań produkcyjnych, bądź innych technicznych lub finansowych aspektów problemu. Przykładowe ograniczenie:
+
+\[
+\sum_{j=1}^{n} A_{ij} x_j \leq b_i
+\]
+
+gdzie:
+\begin{itemize}
+    \item \( \sum_{j=1}^{n} A_{ij} x_j \) oznacza sumę ważoną zmiennych \( x_j \), gdzie \( j \) jest indeksem biegnącym od 1 do \( n \). Każda zmienna \( x_j \) jest pomnożona przez odpowiadający jej współczynnik \( A_{ij} \) z i-tego wiersza macierzy \( A \).
+    \item \( \leq b_i \) oznacza, że wartość tej sumy ważonej nie może przekroczyć \( b_i \), co jest ograniczeniem określonym przez wartość \( b_i \) dla i-tego wiersza. 
+\end{itemize}
+    
+\section{Algorytmy w programowaniu liniowym}
+\par Do rozwiązywania problemów programowania liniowego wykorzystuje się różne algorytmy, najbardziej znanym jest metoda Simpleks opracowana przez George'a Dantziga. Jak twierdzi sam autor "\textit{metoda simplex, która przekształca raczej niewyrafinowany model LP ekonomii w podstawowe narzędzie do praktycznego planowania dużych, złożonych systemów}" \parencite{dantzig2002linear}. Algorytmy te eksplorują możliwe rozwiązania w poszukiwaniu tego, które najlepiej spełnia funkcję celu przy jednoczesnym przestrzeganiu wszystkich ograniczeń. W praktyce oznacza to znajdowanie punktów na przecięciu ograniczeń, które dają optymalne wartości dla funkcji celu. Do innych metod rozwiązywania problemów LP należą metoda geometryczna opisana na przykładzie przez Wierciak Ewę i Bugajskiego Arkadiusza w \parencite{BibEntry2024Jun}.
+    
+
+    
+%\par Zarządzanie zasobami ludzkimi w kontekście projektów IT odgrywa kluczową rolę w osiąganiu celów projektowych. Zarządzanie zasobami ludzkimi obejmuje procesy organizowania, zarządzania i prowadzenia zespołu projektowego. Wchodzą w to aspekty kulturowe, poziom umiejętności, doświadczenie oraz umiejętności interpersonalne członków zespołu. 
+%\par Efektywne zarządzanie zespołami projektowymi wymaga rozległej wiedzy i kompetencji w zakresie zarządzania ludźmi. Zarządzanie projektami wymaga nie tylko wiedzy technicznej, ale również umiejętności interpersonalnych i zdolności zarządzania zasobami ludzkimi. Współczesne podejście do zarządzania zasobami ludzkimi w projektach obejmuje aspekty takie jak motywowanie, komunikacja, przywództwo i rozwiązywanie konfliktów.
+%\par W branży IT, zarządzanie zasobami ludzkimi napotyka na specyficzne wyzwania, takie jak szybka zmiana technologii, wysoki poziom specjalizacji oraz potrzeba ciągłego rozwoju i adaptacji pracowników. W branży IT wiedza i umiejętności, dzięki szybkiemu rozwojowi dziedziny, szybko tracą ważność, stąd konieczność ciągłego uczenia się i rozwoju, aby dalej pozostać konkurencyjnym na rynku pracy.
+%\par Najlepsze praktyki w zarządzaniu zespołami projektowymi w IT obejmują: elastyczność w zarządzaniu, promowanie kultury ciągłego uczenia się, efektywne komunikowanie się i jasne określenie oczekiwań. Zarządzanie zasobami ludzkimi w zespołach projektowych IT jest złożonym procesem, wymagającym równoważenia różnych umiejętności i potrzeb. Optymalizacja składu zespołu projektowego, z wykorzystaniem metodyk takich jak programowanie liniowe, może przyczynić się do zwiększenia efektywności zespołu projektowego, bardziej wydajnego zarządzania zespołem i sprawniejszego osiągnięcia jego celów.
+
+
+\section{Istota i znaczenie efektywnego składania zespołów}
+\par Składanie efektywnych zespołów projektowych jest kluczowym elementem sukcesu w zarządzaniu projektami, szczególnie w dynamicznej branży IT. Efektywne zespoły charakteryzują się nie tylko odpowiednimi umiejętnościami technicznymi, ale także zdolnością do współpracy, innowacji i efektywnej komunikacji. Kluczem jest stworzenie środowiska, w którym indywidualne talenty mogą być skutecznie połączone, a ich umiejętności w pełni wykorzystane. Według Keen T. R. \parencite{keen2003creating}, fundamentalnymi składowymi zespołu są: efektywność, współzależność, zaangażowanie i odpowiedzialność grupy. Członkowie zespołu muszą mieć wspólny końcowy cel, żeby współpracować i w celu ukierunkowania wysiłków.
+\par Skład zespołu ma bezpośredni wpływ na jego wydajność i sukces projektu. Dobór odpowiednich ludzi na odpowiednie stanowiska jest jednym z najważniejszych decyzji, jakie podejmuje menedżer projektu. Według Mealiea i in. \parencite{mealiea2005strategic} menedżer ogrywa kluczową rolę w utrzymaniu atmosfery w zespole poprzez swoje codzienne aktywności. Zróżnicowanie umiejętności, doświadczenia i perspektyw może znacznie wzbogacić zespół i przyczynić się do lepszych wyników. Thomas R. Keen wspomina w swojej książce, że przed rozpoczęciem pracy muszą zostać określone 3 kluczowe aspekty: misja zespołu - dlaczego zespół istnieje, cele zespołu - co zespół próbuje osiągnąć oraz wytyczne zespołu - co określa sukces, bądź niepowodzenie szespołu \parencite{keen2003creating}.
+\par Synergia w zespołach projektowych oznacza, że całkowity efekt ich współpracy jest większy niż suma poszczególnych wkładów. Ta synergia jest szczególnie ważna w projektach IT, gdzie innowacyjność i kreatywność odgrywają kluczową rolę. Katzenbach i in. \parencite{katzenbach2015wisdom} podkreślają, że zespoły zawsze działają lepiej niż jednostki. W jakiejkolwiek sytuacji wymagającej szerokiego spektrum umiejętności, zespoły zawsze przewyższają nad jednostkami.
+\par Efektywne składanie zespołów projektowych w branży IT jest procesem złożonym, wymagającym nie tylko odpowiedniego doboru umiejętności, ale także budowania kultury współpracy i wzajemnego wsparcia. Odpowiedni skład zespołu, wspierany przez skuteczne przywództwo, jest fundamentem do osiągnięcia synergii i sukcesu
+
+\section{Zastosowanie programowania liniowego}
+\par Programowanie liniowe znajduje zastosowanie w wielu prężnych dziedzinach nauki, przemysłu i infrastruktury. Możliwość opisywania złożonych problemów alokacji zasobów w prosty sposób spowodowała szeroką adaptację LP, przy stawianiu czoła takim problemom. Głównymi dziedzinami, gdzie LP znajduje swoje zastosowanie są:
+\begin{description}
+    \item[Informatyka] Olbrzymie zbiory danych stwarzają problem nawet dla najlepszych organizacji analitycznych na świecie. Przewidywanie trendów na giełdach i rynkach świata, jest niezwykle ważne w znajdywaniu kluczowych informacji dla generowania przyszłych zysków firmy. \parencite{khandelwal2019building}
+    \item[Przemysł] Wykorzystanie LP w procesie alokacji zasobów w przemyśle, może znacznie wpłynąć na zyski firmy, która sięgnie po takie rozwiązanie. Według Khandelwal'a planowanie alokacji zasobów jest ważne dla przemysłu produkcyjnego, gdyż optymalne wykorzystanie zasobów zwiększa zyski firmy \parencite{khandelwal2019building}.
+    \item[Transport] Priorytetami w przemyśle transportowym są planowanie wysyłek, pasażerów i dostarczanie ich na czas. Linie lotnicze stosują techniki LP poprzez ustalanie kosztów i popytu jako czynników dla maksymalizacji zysków \parencite{khandelwal2019building}. Pokazuje to, że LP jest szeroko stosowaną techniką, gdy w grę wchodzi maksymalizacja lub minimalizacja zysków albo kosztów. 
+    \item[Przemysł energetyczny] LP w przemyśle energetycznym pozwala na optymalizacje zużycia surowców używanych do produkcji oraz dystrybucji wyprodukowanej energii. Według Khandelwal'a zastosowanie LP pozwala na efektywną przebudowę sieci energetycznych \parencite{khandelwal2019building}.
+\end{description}
+
+\par Z tych twierdzeń można wyciągnąć wniosek, że LP znajduj zastosowanie tam, gdzie liczy się zysk i przestrzeganie określonych ograniczeń. Jak zauważają Katzenbach i in. \parencite{katzenbach2015wisdom} większość menedżerów zauważa wartość w zespołach, ale problemy stwarzają dopiero trudne warunki, wymagania czasowe i niewarunkowane założenia. Z tego powodu, użycie LP w zarządzaniu zasobami ludzkimi, przyniesie równie dobre efekty. Stawką utworzenia optymalnego zespołu są straty organizacji, ale zastosowanie modelu optymalizacyjnego jest w stanie szybko i efektywnie rozwiązać problem tworzenia optymalnego zespołu.

@@ -1,0 +1,41 @@
+\documentclass[a4paper,12pt,oneside,onecolumn]{book}
+\linespread{1.5}
+\input{style.tex}
+
+\addbibresource{refs.bib}
+
+\begin{document}
+
+% *************** Front matter ***************
+\input{front.tex}
+\clearpage
+\addcontentsline{toc}{chapter}{Wprowadzenie}
+\input{chapters/introduction.tex}
+\input{chapters/chapter1.tex}
+\input{chapters/chapter2.tex}
+\input{chapters/chapter4.tex}
+\clearpage
+\addcontentsline{toc}{chapter}{Podsumowanie}
+\input{chapters/ending.tex}
+
+% \newpage
+% \printbibliography[title={Źródła internetowe},notkeyword={external}]
+
+
+% \newpage
+% \printbibliography[title={Literatura},notkeyword={external}]
+
+% \lstlistoflistings
+\clearpage
+
+\addcontentsline{toc}{chapter}{Bibliografia}
+\printbibliography
+
+\newpage
+\addcontentsline{toc}{chapter}{Spis rysunków}
+\listoffigures
+
+\newpage
+\addcontentsline{toc}{chapter}{Spis próbek kodu}
+\lstlistoflistings
+\end{document}
