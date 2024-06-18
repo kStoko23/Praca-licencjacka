@@ -22,4 +22,4 @@ df_pracownicy["Wynagrodzenie"] = np.where(df_pracownicy["Suma Umiejetnosci"] >= 
 
 print(df_pracownicy.head())
 df_pracownicy.to_csv(nazwa_pliku_csv + ".csv", index=False)
-print(f"Dane zostaly zapisane do pliku {nazwa_pliku_csv}.")
+print(f"Dane zostaly zapisane w pliku {nazwa_pliku_csv}.")

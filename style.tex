@@ -22,6 +22,7 @@
 \usepackage{float}
 \usepackage{cprotect}
 \usepackage[nottoc, notlof, notlot, numbib]{tocbibind}
+\usepackage{caption}
 
 
 %\patchcmd{\chapter}{\thispagestyle{plain}}{\thispagestyle{fancy}}{}{}
@@ -126,4 +127,42 @@
 \renewbibmacro*{begentry}{%
   \printfield{labelnumber}%
   \hspace{2mm}% Dodatkowa przestrzeń po numerze
+}
+
+% Definicje stylu dla podpisów
+\captionsetup[figure]{
+  font=small, % Wielkość czcionki dla podpisów
+  labelfont=bf, % Pogrubione oznaczenie numeru rysunku
+  justification=raggedright, % Wyrównanie tekstu podpisu do lewej
+  labelsep=period, % Dodanie kropki po numerze rysunku
+  singlelinecheck=off % Wymuszenie wyrównania do lewej niezależnie od długości tekstu
+}
+
+\captionsetup[lstlisting]{
+  font=small, % Wielkość czcionki dla podpisów
+  labelfont=bf, % Pogrubione oznaczenie numeru rysunku
+  justification=raggedright, % Wyrównanie tekstu podpisu do lewej
+  labelsep=period, % Dodanie kropki po numerze rysunku
+  singlelinecheck=off % Wymuszenie wyrównania do lewej niezależnie od długości tekstu
+}
+
+
+% Ustawienia dotyczące samych rysunków
+\makeatletter
+\renewcommand{\fnum@figure}{Rysunek \thefigure}
+\makeatother
+
+\setlength{\abovecaptionskip}{10pt} % Odstęp nad podpisem
+\setlength{\belowcaptionskip}{5pt} % Odstęp pod podpisem
+\newcommand{\refnote}[1]{%
+  \ref{#1}\footnote{Sekcja \ref{#1}, strona \pageref{#1}}%
+}
+\newcommand{\parrefnote}[1]{%
+  \ref{#1}\footnote{Paragraf \ref{#1}, strona \pageref{#1}}%
+}
+\newcommand{\figrefnote}[1]{%
+  \ref{#1}\footnote{Rysunek \ref{#1}, strona \pageref{#1}}%
+}
+\newcommand{\pagerefnote}[1]{%
+  \pageref{#1}\footnote{Strona \pageref{#1}}%
 }

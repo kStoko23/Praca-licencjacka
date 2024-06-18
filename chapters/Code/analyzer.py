@@ -84,4 +84,4 @@ with pd.ExcelWriter(analized_file_name + '.xlsx', engine='xlsxwriter') as writer
     worksheet.insert_image(row, col, '', {'image_data': img_data})
     row += 15
 
-print("Analiza zakonczona i zapisana do " + analized_file_name + ".xlsx")
+print("Analiza zakonczona i zapisana w " + analized_file_name + ".xlsx")

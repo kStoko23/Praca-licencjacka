@@ -59,10 +59,8 @@
 \end{description}
 \par Po wygenerowaniu, dane są eksportowane do pliku \verb|.csv| do wglądu i analizy oraz do późniejszego zastosowania w modelu optymalizacyjnym. Struktura danych jest ściśle związana z procesem tworzenia modelu oraz pozwala na wielokrotne testowanie modelu w oparciu o różnorodne dane. Tak generowany zbiór danych w rzeczywistości mógłby być zastąpiony, po odpowiednim opracowaniu danych, faktycznymi danymi rynkowymi w celu przeprowadzenia faktycznej analizy w rzeczywistym scenariuszu. Struktura danych w pliku z wygenerowanymi pracownikami \verb|.csv| wygląda następująco:
 \begin{figure}[H]
-    \centering
     \includegraphics[width=\linewidth]{chapters/Images/pracownicy_csv.png}
-    \cprotect\caption{Struktura danych pracowników w pliku \verb|.csv| po wygenerowaniu}
-    \textit{Źródło: opracowanie własne}
+    \cprotect\caption{Struktura danych pracowników w pliku \verb|.csv| po wygenerowaniu\\ Źródło:\textit{ opracowanie własne}}
 \end{figure}
 
 \par Tak utworzony zbiór danych stanowi podstawę do analizy możliwości modelu optymalizacyjnego przy różnych warunkach i ograniczeniach w kontekście zarządzania zespołami projektowymi w branży IT. Analiza danych umożliwi wykrycie istotnych wzorców i trendów, które bezpośrednio wpłyną na efektywność i skuteczność optymalnego zespołu projektowego.
@@ -72,7 +70,7 @@
 \section{Omówienie kodu generatora danych}\label{sec:kod_generator}
 \par Kod przedstawiony na grafice pełni rolę generatora danych dla pracowników w kontekście projektu IT. Przede wszystkim, generuje on dane dotyczące umiejętności technicznych i wynagrodzenia pracowników. Poniżej znajduje się szczegółowe omówienie każdej sekcji kodu z uwzględnieniem numeracji linii.
 
-\lstinputlisting[language=Python, caption=Kod źródłowy generatora danych \textit{Źródło: opracowanie własne}]{generator.py}
+\lstinputlisting[language=Python, caption=Kod źródłowy generatora danych\\ Źródło:\textit{ opracowanie własne}]{generator.py}
 
 \begin{description}
     \item[Linie 1-3] - Na początku skryptu importowane są trzy kluczowe biblioteki: \verb|numpy| (alias \verb|np|), \verb|pandas| (alias \verb|pd|) oraz \verb|names|. Biblioteka numpy jest używana do operacji matematycznych i generowania losowych danych, pandas do tworzenia i manipulacji strukturami danych, takimi jak DataFrame, a names do generowania losowych imion pracowników. 

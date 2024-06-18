@@ -13,8 +13,7 @@
     \begin{figure}[H]
         \centering
         \includegraphics[width=\linewidth]{chapters/Images/pracownicy_przykład.png}
-        \cprotect\caption{Przykładowe dane pracowników w pliku \verb|pracownicy.csv|}
-        \textit{Źródło: opracowanie własne} 
+        \cprotect\caption{Przykładowe dane pracowników w pliku \verb|pracownicy.csv|\\ Źródło:\textit{ opracowanie własne}} 
     \end{figure}
 
     \par Menedżer musi wziąć pod uwagę ograniczenia przy wyborze pracowników, do których należą budżet i minimalny poziom umiejętności zespołu potrzebny do wykonania projektu. Budżet został określony przez dyrektora firmy na 150 000 złotych, a czas na wykonanie projektu stanowi 120 roboczogodzin (dalej RBH). Dla uproszczenie zadania budżet bierze pod uwagę tylko wynagrodzenia pracowników. Z uwagi na złożoność i wymagania jakie stawia wytworzenie tego oprogramowania, menedżer ustalił, że minimalny poziom umiejętności w tym zespole będzie wynosić 85 punktów.
@@ -105,7 +104,7 @@
     \par W tym podrozdziale zostało przedstawione zadanie optymalizacyjne w ramach studium przypadku. Owa optymalizacja została sformułowana jako minimalizacja kosztów zespołu projektowego w firmie IT, która dysponuje danymi o swoich pracownikach w pliku \verb|pracownicy.csv|. Zidentyfikowano kluczowe parametry i zmienne, a także określono funkcje celu oraz jej ograniczenia. Do ograniczeń należało ograniczenie budżetowe oraz ograniczenie minimalnego poziomu umiejętności zespołu, a funkcja celu dąży do minimalizacji kosztu zespołu. Implementacja tego zadania, a co za tym idzie modelu optymalizacyjnego, zostanie przeprowadzona w języku programowania Python z wykorzystaniem bibliotek \verb|PuLP| dla łatwego modelowania oraz \verb|Pandas| dla pracy z plikami csv. 
     
 \section{Zastosowanie modelu do optymalizacji zespołu projektowego}
-\par W tej części pracy zostanie przeprowadzone badanie problemu opisanego w sekcji \ref{sec:studium} na stronie \pageref{sec:studium}. Badanie będzie polegało na wygenerowaniu danych o pracownikach za pomocą \verb|generator.py|. Następnie zostanie przeprowadzona analiza wygenerowanych danych za pomocą skryptu \verb|analyzer.py|. Po przeprowadzonej analizie, wygenerowane dane zostaną załadowane do skryptu \verb|optimizer.py|, który dokona optymalizacji problemu, a jej wyniki również zostaną poddane analizę przez skrypt \verb|analyzer.py|. Analizę poprzedzi omówienie kodu analizującego dane, w celu wyjaśnienia działania i metodologii użytej przy analizie wyników.
+\par W tej części pracy zostanie przeprowadzone badanie problemu opisanego w sekcji \refnote{sec:studium}. Badanie będzie polegało na wygenerowaniu danych o pracownikach za pomocą \verb|generator.py|. Następnie zostanie przeprowadzona analiza wygenerowanych danych za pomocą skryptu \verb|analyzer.py|. Po przeprowadzonej analizie, wygenerowane dane zostaną załadowane do skryptu \verb|optimizer.py|, który dokona optymalizacji problemu, a jej wyniki również zostaną poddane analizę przez skrypt \verb|analyzer.py|. Analizę poprzedzi omówienie kodu analizującego dane, w celu wyjaśnienia działania i metodologii użytej przy analizie wyników.
     
     \subsection{Implementacja modelu optymalizacyjnego}\label{subsec:optimizer_implementacja}
         \par W tej sekcji została szczegółowo omówiona implementacja modelu optymalizacyjnego, który pozwala na efektywne zarządzanie zasobami ludzkimi w firmie IT, z wykorzystaniem technik programowania liniowego. Implementacja ta obejmuje różnorodne narzędzia i technologie, które umożliwiają budowę, rozwiązanie oraz analizę wyników modelu optymalizacyjnego.
@@ -129,7 +128,7 @@
     \subsubsection{Omówienie kodu źródłowego modelu optymalizacyjnego}
     \par W tej sekcji rozdziału zostanie szczegółowo omówiony kod źródłowy skryptu optymalizacyjnego, którego celem jest optymalizacja składu zespołu projektowego w firmie IT. Dane pracowników wykorzystane do optymalizacji zostają pobierane z pliku \verb|pracownicy.csv| a następnie zostają wczytane do modelu w celu optymalizacji. Model posiada implementacje ograniczeń opisanych w problemie oraz wyznaczonej funkcji celu, a także zapisuje wyniki optymalizacji w pliku \verb|wybrani_pracownicy.csv| w celu dalszej analizy.
 
-    \lstinputlisting[language=Python, caption={Kod źródłowy modelu. \textit{Źródło: opracowanie własne}}]{optimizer.py}
+    \lstinputlisting[language=Python, caption={Kod źródłowy modelu. \\Źródło:\textit{ opracowanie własne}}]{optimizer.py}
 
     \begin{description}
         \item[Linie 1-2] W tych dwóch liniach importowane są biblioteki niezbędne do realizacji modelu optymalizacyjnego, które szczegółowo zostały omówione w poprzednim rozdziale. W środowisku języka \verb|Python|, potrzeba i chęć wykorzystania konkretnej biblioteki wiąże się z jej wcześniejszym zaimportowaniem.
@@ -142,15 +141,14 @@
             \begin{figure}[H]
                 \centering
                 \includegraphics[width=\linewidth]{chapters/Images/wybrani_pracownicy_przyklad_csv.png}
-                \cprotect\caption{Przykładowe dane w pliku \verb|wybrani_praocwnicy.csv|}
-                \textit{Źródło: opracowanie własne} 
+                \cprotect\caption{Przykładowe dane w pliku \verb|wybrani_praocwnicy.csv|\\ Źródło:\textit{ opracowanie własne}}
             \end{figure}
     \end{description}
     
     \par W ten sposób kod realizuje zadanie optymalizacji składu zespołu projektowego, minimalizując koszty przy jednoczesnym spełnieniu wymagań dotyczących umiejętności i budżetu. W następnych sekcjach tego rozdziału zostanie przeprowadzona dokładna analiza statystyczna danych wszystkich pracowników jak i wyników po przeprowadzonej optymalizacji, która posłuży do wyciągnięcia wniosków. Dzięki analizie będzie można określić wady oraz zalety modelu, a także jego użyteczność w bardziej rzeczywistych scenariuszach.
 
     \subsection{Generacja danych o pracownikach}\label{sec:generacja_danych}
-    \par Generowanie danych o pracownikach jest istotnym etapem w testowaniu modelu optymalizacyjnego i przeprowadzania symulacji. Skrypt \verb|generator.py|, opisany w sekcji \ref{sec:kod_generator} na stronie \pageref{sec:kod_generator}, pozwala na szybkie i efektywne tworzenie losowych danych, które będą używane w dalszych analizach. Korzystanie z losowo generowanych danych umożliwia elastyczne testowanie różnych scenariuszy i pozwala sprawdzić wszechstronność modelu.
+    \par Generowanie danych o pracownikach jest istotnym etapem w testowaniu modelu optymalizacyjnego i przeprowadzania symulacji. Skrypt \verb|generator.py|, opisany w sekcji \refnote{sec:kod_generator}, pozwala na szybkie i efektywne tworzenie losowych danych, które będą używane w dalszych analizach. Korzystanie z losowo generowanych danych umożliwia elastyczne testowanie różnych scenariuszy i pozwala sprawdzić wszechstronność modelu.
     
     \par Przed wygenerowaniem danych, należy upewnić się, że system posiada odpowiednie wymagania programowe. Do takowych należą:
     \begin{description}
@@ -164,7 +162,7 @@
         \item Names
     \end{itemize}
     
-    \lstinputlisting[language=bash, firstline=5, lastline=5, caption=Komenda instalacji bibliotek dla skryptu generatora danych \textit{Źródło: opracowanie własne}]{snippets.sh}
+    \lstinputlisting[language=bash, firstline=5, lastline=5, caption=Komenda instalacji bibliotek dla skryptu generatora danych \\Źródło:\textit{ opracowanie własne}]{snippets.sh}
     
     \par Aby wygenerować dane, koniecznym jest podanie kilku znaczących parametrów, takich jak liczba pracowników oraz średnia i odchylenie standardowe, które zostaną użyte w rozkładzie normalnym. W tym badaniu przyjęto następujące wartości:
     
@@ -176,18 +174,22 @@
     
     Implementacja w skrypcie wygląda następująco, użytkownik zostanie zapytany o wartości tych zmiennych oraz nazwę pliku do zapisania danych:
     
-    \lstinputlisting[language=Python, firstline=5, lastline=8, caption=Implementacja zmiennych generatora danych \textit{Źródło: opracowanie własne}]{generator.py}
+    \lstinputlisting[language=Python, firstline=5, lastline=8, caption=Implementacja zmiennych generatora danych\\ Źródło:\textit{ opracowanie własne}]{generator.py}
     
     \par Rozkład normalny został wybrany ze względu na swoje właściwości statystyczne, które zapewniają, że większość wygenerowanych wartości będzie skupiona wokół średniej. Tak przygotowany skrypt jest gotowy do generowania danych i należy go uruchomić poprzez komendę w terminalu lub za pomocą odpowiedniego przycisku w wybranym środowisku programistycznym. Na potrzeby badania plik z danymi został nazwany \verb|pracownicy.csv|. Wygenerowane dane zostaną zapisane we wcześniej nazwanym pliku w folderze, w którym znajduje się skrypt.
     
-    \lstinputlisting[language=bash, firstline=1, lastline=1, caption=Komenda do uruchomienia skryptu generatora \textit{Źródło: opracowanie własne}]{snippets.sh}
+    \lstinputlisting[language=bash, firstline=1, lastline=1, caption=Komenda do uruchomienia skryptu generatora\\ Źródło:\textit{ opracowanie własne}]{snippets.sh}
 
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=\linewidth]{chapters/Images/terminal_generator.png}
-        \cprotect\caption{Terminal po zakończeniu skryptu \verb|generator.py|}
-        \textit{Źródło: opracowanie własne} 
-    \end{figure}
+
+\begin{lstlisting}[language=bash, caption=Terminal po zakończeniu skryptu\\ Źródło:\textit{ opracowanie własne}]
+        Imie  Umiejetnosci Angular  Umiejetnosci Java
+0   Christina Roll            0.20               0.46
+1   Robert Schmitt            0.42               0.00
+2       Joshua Key            0.97               0.85
+3  Louise Hilliard            0.33               0.71
+4  Shelby Mainolfi            1.00               0.09
+Dane zostaly zapisane w pliku pracownicy.csv
+\end{lstlisting}
     
     \par Dzięki łatwej modyfikacji skryptu, wielokrotne testowanie przy różnych scenariuszach optymalizacyjnych jest wyjątkowo proste i szybkie. Możliwość dokonywania szybkich zmian w procesie generowania danych daje dużą swobodę i pozwala na sprawdzenie modelu przy różnych parametrach wejściowych. 
     
@@ -205,21 +207,60 @@
             \item PuLP
         \end{itemize}
     Można je zainstalować używając komendy:
-    \lstinputlisting[language=bash, firstline=7, lastline=7, caption=Instalacja bibliotek potrzebnych dla skryptu optymalizacyjnego \textit{Źródło: opracowanie własne}]{snippets.sh}
+    \lstinputlisting[language=bash, firstline=7, lastline=7, caption=Instalacja bibliotek potrzebnych dla skryptu optymalizacyjnego\\ Źródło:\textit{ opracowanie własne}]{snippets.sh}
 
     \par Implementacja oraz optymalizacja modelu za pomocą skryptu \verb|optimizer.py| jest kluczowa w kontekście studium przypadku i przedstawionego problemu. Skrypt umożliwia optymalizacje zasobów pod kątem łącznego kosztu zespołu i jednocześnie zachowuje ograniczenia budżetowe oraz minimalnych umiejętności zespołu. Poprzez pobieranie danych o budżecie, godzinach przeznaczonych na projekt oraz minimalnej sumy umiejętności bezpośrednio od użytkownika, model można uruchomić szybko i sprawnie. W celu uruchomienia skryptu należy w terminalu wpisać komendę:
     
-    \lstinputlisting[language=bash, firstline=3, lastline=3, caption=Komenda do uruchomienia skryptu optymalizacyjnego \textit{Źródło: opracowanie własne}]{snippets.sh}
+    \lstinputlisting[language=bash, firstline=3, lastline=3, caption=Komenda do uruchomienia skryptu optymalizacyjnego\\ Źródło:\textit{ opracowanie własne}]{snippets.sh}
 
     \par Po uruchomieniu użytkownik zostaje poproszony o podanie ścieżki do pliku z danymi pracowników oraz o nazwę pliku w którym mają być zapisane wyniki. Na potrzeby badania plik wejściowy nazwano \verb|pracownicy.csv|, a wyniki są zapisywane w pliku \verb|wybrani_pracownicy.csv|. Następnie zostają wprowadzone wartości zmiennych budżet, liczba godzin na projekt oraz minimalna suma umiejętności w zespole. Po podaniu tych parametrów, optymalizacja będzie wykonana, a wyniki zostaną zapisane pod podaną wcześniej nazwą, w tym samym folderze w którym umieszczony jest skrypt.
 
     \par Po zakończeniu, skrypt wypisuje do konsoli następujące informacje:
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=\linewidth]{chapters/Images/terminal_optimizer.png}
-        \cprotect\caption{Terminal po zakończeniu skryptu \verb|optimizer.py|}
-        \textit{Źródło: opracowanie własne} 
-    \end{figure}
+
+\begin{lstlisting}[language=bash, caption=Terminal po zakończeniu skryptu\\ Źródło:\textit{ opracowanie własne}]
+Status: Optimal
+Wybrani pracownicy:
+                     Imie
+43        Michael Mccloud
+63          Janine Sheats
+97           Ronald Brown
+124         Edward Roblez
+152         Felice Hussey
+216           Kent Mendez
+350        Carrie Waggner
+368        Charles Parker
+458           Susan Tracy
+488         Teresa Berube
+585   Jacqueline Schulman
+636             Glenda Le
+815           Naomi Hasse
+921       Genevieve Posey
+926          John Luevano
+1024          Floyd Adams
+1038           Dana Helms
+1067           Emma Wheat
+1144           Wanda Hunt
+1221           John Truax
+1338          Gale Wesley
+1371      Breanna Mcguire
+1459       Brandy Schmidt
+1462        James Pullins
+1509        Thomas Walker
+1574          Andrea Lien
+1625         Emily Walton
+1655         James Morgan
+1698          Mary Butera
+1784           Jay Lerman
+1832       Laura Colosimo
+1875        Charles Miles
+1989          Darrin Berg
+
+Liczba wybranych pracownikow: 33
+
+Laczny koszt: 126000.0
+Suma umiejetnosci wybranych pracownikow: 85.02
+\end{lstlisting}
+    
     Można na nich zauważyć kluczowe informację:
     \begin{description}
         \item[Status: Optimal] - Zwrócona informacja o statusie optymalizacji, \verb|Optimal| oznacza pomyślne wykonanie optymalizacji i informuje o znalezieniu optymalnego rozwiązania problemu.
@@ -239,7 +280,7 @@
     \subsection{Omówienie kodu źródłowego analizatora}\label{sec:analyzer}
         \par Analiza danych wygenerowanych poprzez \verb|generator.py| została przeprowadzona za pomocą skryptu \verb|analyzer.py|. Skrypt ten przyjmuje plik w formacie \verb|.csv| i konwertuje je do formatu \verb|xlsx|, czyli popularnego arkusza kalkulacyjnego Microsoft Excel. Dostęp do pliku jest uzyskiwany poprzez bibliotekę \verb|Pandas|, a do wizualizacji i analizy statystycznej używane są biblioteki \verb|matplotlib.pyplot| oraz \verb|seaborn|. Funkcjonalność dodawania wykresów jest uzyskana dzięki bibliotekom \verb|xlsxwriter| oraz modułowi języka Python \verb|IO|, a konwersja z .csv na .xlsx jest wykonana dzięki kolejnemu modułowi - \verb|OS|. Kod źródłowy dla \verb|analyzer.py| wygląda w następujący sposób:
 
-        \lstinputlisting[language=Python, caption=Kod źródłowy skryptu analizującego \textit{Źródło: opracowanie własne}]{analyzer.py}
+        \lstinputlisting[language=Python, caption=Kod źródłowy skryptu analizującego\\ Źródło:\textit{ opracowanie własne}]{analyzer.py}
 
         \begin{description}
             \item[Linie 1-6] Importowanie potrzebnych bibliotek.
@@ -269,11 +310,11 @@
         \end{itemize}
         Można je zainstalować używając tej komendy w terminalu:
         
-        \lstinputlisting[language=bash, firstline=9, lastline=9, caption=Instalacja bibliotek dla skryptu analizującego \textit{Źródło: opracowanie własne}]{snippets.sh}
+        \lstinputlisting[language=bash, firstline=9, lastline=9, caption=Instalacja bibliotek dla skryptu analizującego\\ Źródło:\textit{ opracowanie własne}]{snippets.sh}
 
         \par Po przeprowadzonej instalacji, należy uruchomić skrypt poprzez naciśnięcie odpowiedniego przycisku w wybranym środowisku programistycznym lub poprzez wpisanie tej komendy w terminalu:
 
-        \lstinputlisting[language=bash, firstline=2, lastline=2, caption=Komenda do uruchomienia skryptu analizującego \textit{Źródło: opracowanie własne}]{snippets.sh}
+        \lstinputlisting[language=bash, firstline=2, lastline=2, caption=Komenda do uruchomienia skryptu analizującego\\ Źródło:\textit{ opracowanie własne}]{snippets.sh}
 
         \par Uruchomienie skryptu spowoduje pojawienie się pytań do użytkownika o:
         \begin{itemize}
@@ -282,18 +323,16 @@
         \end{itemize}
         Po zakończonej analizie, plik z wynikami zostanie zapisany w folderze, w którym znajduje się skrypt. Tak przeprowadzona analiza zajmuje bardzo mało czasu i dostarcza bezbłędne wyniki do dalszej interpretacji.
 
-        \begin{figure}[H]
-            \centering
-            \includegraphics[width=\linewidth]{chapters/Images/terminal_analyzer.png}
-            \cprotect\caption{Terminal po zakończeniu skryptu \verb|analyzer.py|}
-            \textit{Źródło: opracowanie własne}
-        \end{figure}
+\begin{lstlisting}[language=bash, caption=Terminal po zakończeniu skryptu\\ Źródło:\textit{ opracowanie własne}]
+Przekonwertowano pracownicy.csv na pracownicy.xlsx
+Analiza zakonczona i zapisana w analiza_pracownicy.xlsx    
+\end{lstlisting}
 
     \subsection{Interpretacja analizy wygenerowanych danych pracowników}\label{subsec:analiza_wejscie}
     \par Dane na temat populacji pracowników przeanalizowane przez skrypt \verb|analyzer.py| znajdują się w pliku \verb|.xlsx| o nazwie podanej przez użytkownika. Analiza została podzielona na dwa arkusze: pierwszy - \verb|Statystyki| zawiera podstawową analizę statystyczną danych pracowników w formie tabeli, drugi - \verb|Wykresy| zawiera wygenerowane histogramy, macierz korelacji oraz wykres rozrzutu.
 
     \subsection{Analiza danych z tabeli}\label{subsec:tabela_populacja}
-    \par Tabela przedstawiona na rysunku \ref{fig:tabela_analiza} przedstawia zestawienie statystyk obliczonych przez skrypt \verb|analyzer.py| omówiony w sekcji \ref{sec:analyzer} na stronie \pageref{sec:analyzer}. Zawiera ona metryki dla poszczególnych umiejętności oraz wynagrodzenia pracowników. Wśród nich znajdują się:
+    \par Tabela przedstawiona na rysunku \ref{fig:tabela_analiza} przedstawia zestawienie statystyk obliczonych przez skrypt \verb|analyzer.py| omówiony w sekcji \refnote{sec:analyzer}. Zawiera ona metryki dla poszczególnych umiejętności oraz wynagrodzenia pracowników. Wśród nich znajdują się:
     \begin{description}
         \item[count] - Liczba pracowników w populacji
         \item[mean] - Średnia
@@ -304,44 +343,41 @@
     \end{description}
 
     \begin{figure}[H]
-        \centering
         \includegraphics[width=\linewidth]{chapters/Images/analiza_tabela_all.png}
-        \cprotect\caption{Tabela populacji pracowników po analizie}
-        \textit{Źródło: opracowanie własne} 
+        \cprotect\caption{Tabela populacji pracowników po analizie\\ Źródło:\textit{ opracowanie własne}}
         \label{fig:tabela_analiza}
     \end{figure}
 
     \par Z tak wygenerowanej tabeli można wyciągnąć następujące wnioski:
     \begin{description}
-        \item[Rozmiar populacji\label{itm:count}]  - Pokazuje rozmiar populacji i potwierdza, że analiza została przeprowadzona na pełnym zestawie danych, generowanych w sekcji \ref{sec:generacja_danych} na stronie \pageref{sec:generacja_danych}. 
+        \item[Rozmiar populacji\label{itm:count}]  - Pokazuje rozmiar populacji i potwierdza, że analiza została przeprowadzona na pełnym zestawie danych.
         
         \item[Średnia\label{itm:mean}] - Średnia z każdej umiejętności wynosi od $0,42$ do $0,45$, co sugeruje, że większość pracowników posiada średni poziom umiejętności w każdej kategorii. W porównaniu do maksimum poszczególnych umiejętności, znaczna część pracowników posiada niższy o ponad połowę skali poziom umiejętności, niż maksymalny w populacji. Takie średnie są powodem dla średniej sumy pięciu umiejętności równej $2,17$. Natomiast średnia wynagrodzenia jest równa $57,75$ na godzinę, co daje dobre pojęcie o tym, jakiego wynagrodzenia średnio oczekują pracownicy tej firmy i może sugerować, że pracownicy z wyższą sumą umiejętności będą oczekiwać wyższego wynagrodzenia.
         
         \item[Odchylenie standardowe\label{itm:std}] - Odchylenie std. każdej umiejętności będące na dosyć wysokim poziomie $[0,35; 0,36]$, wskazuje na duże zróżnicowanie w poziomach opanowania poszczególnych umiejętności przez pracowników. Co za tym idzie, odchylenie std. dla sumy umiejętności wynoszące $0,79$ jest wysokie  i wskazuje na dużą zmienność w łącznym poziomie umiejętności wśród populacji pracowników firmy. Podobnie w wypadku wynagrodzenia, gdzie odchylenie std. wynosi $18,78$ będąc również na wysokim poziomie. W porównaniu do maksimum żądanego wynagrodzenia wynoszącego $98,00$, takie odchylenie sugeruje obecność dużego zróżnicowania w kwestii wynagrodzenia w populacji i może być spowodowane różnicami w umiejętnościach i sumie umiejętności.
         
-        \item[Minimum\label{itm:min}] - Minimalne wartości w poszczególnych kategoriach wynoszą $0$, co dowodzi, że niektórzy pracownicy nie posiadają żadnych umiejętności w danej kategorii. Najprawdopodobniej nie są to najlepsi kandydaci do zespołu opisanego w problemie \ref{subsec:problem}. Minimalne wynagrodzenie wynosi $30,00$ co nasuwa wnioski, że najmniej zarabiają pracownicy, o najmniejszej sumie umiejętności.
+        \item[Minimum\label{itm:min}] - Minimalne wartości w poszczególnych kategoriach wynoszą $0$, co dowodzi, że niektórzy pracownicy nie posiadają żadnych umiejętności w danej kategorii. Minimalne wynagrodzenie wynosi $30,00$ co nasuwa wnioski, że najmniej zarabiają pracownicy, o najmniejszej sumie umiejętności.
         
-        \item[Maksimum\label{itm:max}] - Maksymalne wartości w poszczególnych kategoriach umiejętności wynoszą $1,00$, co sugeruje istnienie pracowników, którzy opanowali pewne dziedziny w pełni. Jednak można zauważyć, że w populacji nie ma pracownika, który by opanował każdą z umiejętności, gdyż maksymalna suma umiejętności wynosi $4,49$. Natomiast maksymalne wynagrodzenie wynoszące $98,00$, świadczy o obecności pracowników, którzy bardzo cenią swoja wysoką ekspertyzę. Wysoki poziom umiejętności jest ważny dla zespołu opisanego w problemie w sekcji \ref{subsec:problem}, jednak wysokie koszty takich pracowników, mogą ich wyeliminować z końcowego zespołu.
+        \item[Maksimum\label{itm:max}] - Maksymalne wartości w poszczególnych kategoriach umiejętności wynoszą $1,00$, co sugeruje istnienie pracowników, którzy opanowali pewne dziedziny w pełni. Jednak można zauważyć, że w populacji nie ma pracownika, który by opanował każdą z umiejętności, gdyż maksymalna suma umiejętności wynosi $4,49$. Natomiast maksymalne wynagrodzenie wynoszące $98,00$, świadczy o obecności pracowników, którzy bardzo cenią swoja wysoką ekspertyzę. Wysoki poziom umiejętności jest ważny, jednak wysokie koszty takich pracowników, mogą ich wyeliminować z końcowego zespołu.
         
         \item[Kwartyle 25\%, 50\% i 75\%\label{itm:kwartyl}] - Kwartyle pokazują jaki rozkład mają poszczególne statystyki i pokazują rozproszenie wartości są rozproszone w populacji pracowników. 
             \begin{itemize}
                 \item W kwartylu pierwszym (25\%) umiejętności są na poziomie od $0,3$ do $0,9$, co oznacza istnienie znacznej grupy pracowników o bardzo niskich umiejętnościach i ich sumie, która jest równa lub niższa $1,63$. W kwestii wynagrodzenia, w kwartylu pierwszym pracownicy nie żądają więcej niż $42,00$, co czyniłoby ich dobrymi kandydatami do zespołu, gdyby nie niska suma umiejętności.
-                \item W kwartylu drugim (50\%) umiejętności mają wartości pomiędzy $0,38$ a $0,42$, co sugeruje istnienie sporej grupy pracowników o umiejętnościach zbliżonych do średniej i o sumie umiejętności wynoszącej $2,17$, która jest równa średniej sumie umiejętności. W kwestii wynagrodzenia, pracownicy z kwartylu drugiego oczekują wynagrodzenia na poziomie bardzo zbliżonym do średniej równego $56,00$. Takie dane mogą sugerować, że w kwartylu drugim znajdują się pracownicy dobrze pasujący do zespołu omawianego w problemie \ref{subsec:problem}.
-                \item Kwartyl trzeci obejmuje pracowników z umiejętnościami na poziomie poniżej około od $0,71$ do $0,76$. Wiadomo dzięki temu, że tylko 25\% pracowników ma umiejętności na wyższym poziomie niż ta grupa. Suma umiejętności w tym kwartylu wynosi $2,71$ i jest znacznie (o $0,54$) większa od średniej sumy. Wynagrodzenie natomiast wynosi $70,00$, co jest logicznym wyniki, gdyż wiadomo, że większe umiejętności wiążą się z większym oczekiwanym wynagrodzeniem (\textit{Analiza kodu generatora danych} \ref{sec:kod_generator}).
+                \item W kwartylu drugim (50\%) umiejętności mają wartości pomiędzy $0,38$ a $0,42$, co sugeruje istnienie sporej grupy pracowników o umiejętnościach zbliżonych do średniej i o sumie umiejętności wynoszącej $2,17$, która jest równa średniej sumie umiejętności. W kwestii wynagrodzenia, pracownicy z kwartylu drugiego oczekują wynagrodzenia na poziomie bardzo zbliżonym do średniej równego $56,00$. Takie dane mogą sugerować, że w kwartylu drugim znajdują się pracownicy dobrze pasujący do zespołu omawianego w problemie.
+                \item Kwartyl trzeci obejmuje pracowników z umiejętnościami na poziomie poniżej około od $0,71$ do $0,76$. Wiadomo dzięki temu, że tylko 25\% pracowników ma umiejętności na wyższym poziomie niż ta grupa. Suma umiejętności w tym kwartylu wynosi $2,71$ i jest znacznie (o $0,54$) większa od średniej sumy. Wynagrodzenie natomiast wynosi $70,00$, co jest logicznym wynikiem, że większe umiejętności wiążą się z większym oczekiwanym wynagrodzeniem.
             \end{itemize}
         
     \end{description}
     \par Dzięki takie analizie, można wyciągnąć silne wnioski na temat tego, kto zostanie wybrany do zespołu i jak będą wyglądać statystyki takiego zespołu. Optymalnie wybrani pracownicy będą oczekiwali wynagrodzenia z kwartyla drugiego, co wiąże się z niższą ekspertyzą w niektórych kategoriach.
     
     \subsection{Histogramy}\label{subsec:histogramy}
-    \par Histogramy przedstawiają częstotliwość występowania pracowników o danych poziomach umiejętności, wynagrodzenia czy sumy umiejętności. Oś X, przedstawia zakres poziomu umiejętności wynosi $[0, 1]$ zgodnie z ustaloną implementacją w sekcji \ref{sec:kod_generator}, a oś Y reprezentuje częstotliwość występowania pracowników z określonym poziomem dla danej kategorii w konkretnym zakresie. W przypadku histogramów sumy umiejętności oraz wynagrodzenia oś X przedstawia kolejno zakresy $[0, 5]$ oraz $[0, 100]$. Osie Y w tych wypadkach pozostają niezmienne. Badanie histogramów może wpłynąć na polityki wynagrodzeń oraz na strategie rozwoju firmy. Histogramy pozwolą wyłonić jakie obszary wymagają poprawy oraz pomogą w lepszym docenianiu pracowników z wyższymi umiejętnościami, promując rozwój.
+    \par Histogramy przedstawiają częstotliwość występowania pracowników o danych poziomach umiejętności, wynagrodzenia czy sumy umiejętności. Oś X, przedstawia zakres poziomu umiejętności wynosi $[0, 1]$, a oś Y reprezentuje częstotliwość występowania pracowników z określonym poziomem dla danej kategorii w konkretnym zakresie. W przypadku histogramów sumy umiejętności oraz wynagrodzenia oś X przedstawia kolejno zakresy $[0, 5]$ oraz $[0, 100]$. Osie Y w tych wypadkach pozostają niezmienne. Badanie histogramów może wpłynąć na polityki wynagrodzeń oraz na strategie rozwoju firmy. Histogramy pozwolą wyłonić jakie obszary wymagają poprawy oraz pomogą w lepszym docenianiu pracowników z wyższymi umiejętnościami, promując rozwój.
     
         \subsubsection{Umiejętności w kategorii Angular}
         \begin{figure}[H]
             \centering
             \includegraphics[width=\linewidth]{chapters/Images/hist_angular.png}
-            \cprotect\caption{Histogram umiejętności w kategorii Angular}
-            \textit{Źródło: opracowanie własne} 
+            \cprotect\caption{Histogram umiejętności w kategorii Angular\\ Źródło:\textit{ opracowanie własne}}
             \label{fig:hist_angular}
         \end{figure}
 
@@ -355,13 +391,12 @@
         \begin{figure}[H]
             \centering
             \includegraphics[width=\linewidth]{chapters/Images/hist_java.png}
-            \cprotect\caption{Histogram umiejętności w kategorii Java}
-            \textit{Źródło: opracowanie własne} 
+            \cprotect\caption{Histogram umiejętności w kategorii Java\\ Źródło:\textit{ opracowanie własne}}
             \label{fig:hist_java}
         \end{figure}
 
         \begin{enumerate}
-            \item Podobnie jak przy kategorii Angular (\textit{Analiza histogramów} \ref{fig:hist_angular}) najwyższe słupki występują przy wartościach $0$ i $1$ co oznacza, że wielu pracowników (około $450$ dla wartości $0$ i około $300$ dla wartości $1$) posiada tę umiejętność na poziomie równym $0$ lub $1$. Stanowi to, że około $22,5\%$ pracowników nie posiada umiejętności w tej kategorii, a około $15\%$ posiada bardzo wysoki poziom zaawansowania.
+            \item Podobnie jak przy kategorii Angular najwyższe słupki występują przy wartościach $0$ i $1$ co oznacza, że wielu pracowników (około $450$ dla wartości $0$ i około $300$ dla wartości $1$) posiada tę umiejętność na poziomie równym $0$ lub $1$. Stanowi to, że około $22,5\%$ pracowników nie posiada umiejętności w tej kategorii, a około $15\%$ posiada bardzo wysoki poziom zaawansowania.
             \item Rozkład poziomu umiejętności $[0,1; 0,9]$ jest stosunkowo równomierny, z minimalną fluktuacją. Wskazuje to, że znaczna część populacji (około $1250$) posiada umiejętności w tym zakresie, a umiejętności zbliżone do średniej posiada około $170$ pracowników.
             \item Obserwacja krzywej gęstości daje takie same wnioski, mówiące o rozkładzie umiejętności w populacji, jako zdominowanej przez wartości z przedziału $[0,1; 0,9]$, a resztą skupioną przy wartościach $0$ i $1$.
         \end{enumerate}
@@ -370,8 +405,7 @@
         \begin{figure}[H]
             \centering
             \includegraphics[width=\linewidth]{chapters/Images/hist_uiux.png}
-            \cprotect\caption{Histogram umiejętności w kategorii UI/UX}
-            \textit{Źródło: opracowanie własne} 
+            \cprotect\caption{Histogram umiejętności w kategorii UI/UX\\ Źródło:\textit{ opracowanie własne}}
             \label{fig:hist_uiux}
         \end{figure}
 
@@ -384,21 +418,19 @@
         \begin{figure}[H]
             \centering
             \includegraphics[width=\linewidth]{chapters/Images/hist_sql.png}
-            \cprotect\caption{Histogram umiejętności w kategorii SQL}
-            \textit{Źródło: opracowanie własne} 
+            \cprotect\caption{Histogram umiejętności w kategorii SQL\\ Źródło:\textit{ opracowanie własne}}
             \label{fig:hist_sql}
         \end{figure}
 
         \begin{enumerate}
-            \item Histogram kategorii SQL wskazuje na podobny wzorzec jak w poprzednich przypadkach (wykres \ref{fig:hist_angular}, wykres \ref{fig:hist_java}, wykres \ref{fig:hist_uiux}). Wysokie słupki dla wartości $0$ (około $450$ pracowników) i $1$ (około $250$ pracowników), ze znaczną częścią populacji (około $1700$ lub $65\%$ pracowników) z umiejętnościami w przedziale $[0,1; 0,9;]$. Blisko średniej znajduje się około $180$ pracowników. Krzywa gęstości potwierdza te obserwacje.
+            \item Histogram kategorii SQL wskazuje na podobny wzorzec jak w poprzednich przypadkach. Wysokie słupki dla wartości $0$ (około $450$ pracowników) i $1$ (około $250$ pracowników), ze znaczną częścią populacji (około $1700$ lub $65\%$ pracowników) z umiejętnościami w przedziale $[0,1; 0,9;]$. Blisko średniej znajduje się około $180$ pracowników. Krzywa gęstości potwierdza te obserwacje.
         \end{enumerate}
         
         \subsubsection{Umiejętności w kategorii Znajomość języka angielskiego}
         \begin{figure}[H]
             \centering
             \includegraphics[width=\linewidth]{chapters/Images/hist_angielski.png}
-            \cprotect\caption{Histogram umiejętności w kategorii Znajomość języka angielskiego}
-            \textit{Źródło: opracowanie własne} 
+            \cprotect\caption{Histogram umiejętności w kategorii Znajomość języka angielskiego\\ Źródło:\textit{ opracowanie własne}}
             \label{fig:hist_ang}
         \end{figure}
 
@@ -410,8 +442,7 @@
         \begin{figure}[H]
             \centering
             \includegraphics[width=\linewidth]{chapters/Images/hist_suma.png}
-            \cprotect\caption{Histogram umiejętności w kategorii Suma umiejętności}
-            \textit{Źródło: opracowanie własne} 
+            \cprotect\caption{Histogram umiejętności w kategorii Suma umiejętności\\ Źródło:\textit{ opracowanie własne}}
             \label{fig:hist_suma}
         \end{figure}
 
@@ -425,8 +456,7 @@
         \begin{figure}[H]
             \centering
             \includegraphics[width=\linewidth]{chapters/Images/hist_wynagrodzenie.png}
-            \cprotect\caption{Histogram umiejętności w kategorii Wynagrodzenia}
-            \textit{Źródło: opracowanie własne} 
+            \cprotect\caption{Histogram umiejętności w kategorii Wynagrodzenia\\ Źródło:\textit{ opracowanie własne}}
             \label{fig:hist_wynagrodzenie}
         \end{figure}
 
@@ -440,8 +470,7 @@
     \begin{figure}[H]
         \centering
         \includegraphics[width=\linewidth]{chapters/Images/korelacja.png}
-        \cprotect\caption{Macierz korelacji danych}
-        \textit{Źródło: opracowanie własne} 
+        \cprotect\caption{Macierz korelacji danych\\ Źródło:\textit{ opracowanie własne}}
         \label{fig:korelacja}
     \end{figure}
 
@@ -466,8 +495,7 @@
     \begin{figure}[H]
         \centering
         \includegraphics[width=\linewidth]{chapters/Images/rozrzut.png}
-        \cprotect\caption{Wykres rozrzutu Wynagrodzenie vs Suma umiejętności}
-        \textit{Źródło: opracowanie własne} 
+        \cprotect\caption{Wykres rozrzutu Wynagrodzenie vs Suma umiejętności\\ Źródło:\textit{ opracowanie własne}}
         \label{fig:scatter_plot}
     \end{figure}
 
@@ -475,7 +503,7 @@
 
     \par Wykres jest bardzo widocznie podzielony na dwa wyraźne klastry punktów. Pierwszy i większy klaster obejmuje na osi X obszar od $0$ do około $2,7$ i na osi Y od $30$ do około $70$. Reprezentuje on część populacji, posiadającą sumę umiejętności poniżej $3$, która w efekcie zarabia w przedziale około $[30, 70]$. W tym klastrze, wynagrodzenie nie wykazuje bardzo silnej zależności od sumy umiejętności, co oznacza że nawet pracownicy z niską sumą zarabiają kwoty w górnej granicy przedziału. 
 
-    \par W drugim klastrze znajduje się część populacji o sumie umiejętności w przedziale od około $2,7$ do $5$ i o wynagrodzeniu z przedziału około $[70, 100]$. Ten klaster pokazuje, że wyższy poziom umiejętności wiąże się z wyższym wynagrodzeniem. Można zauważyć, że nawet minimalny wzrost poziomu umiejętności ponad dolną granice tego przedziału powoduje spory wzrost wynagrodzenia. Dzieje się tak z powodu w jaki zostały wygenerowane dane; pracownicy, których suma umiejętności jest większa od trzeciego kwartyla, otrzymują losowe wynagrodzenie z przedziału $[70, 99]$ (\textit{Omówienie kodu źródłowego generatora danych:} \ref{sec:kod_generator}). 
+    \par W drugim klastrze znajduje się część populacji o sumie umiejętności w przedziale od około $2,7$ do $5$ i o wynagrodzeniu z przedziału około $[70, 100]$. Ten klaster pokazuje, że wyższy poziom umiejętności wiąże się z wyższym wynagrodzeniem. Można zauważyć, że nawet minimalny wzrost poziomu umiejętności ponad dolną granice tego przedziału powoduje spory wzrost wynagrodzenia. Dzieje się tak z powodu w jaki zostały wygenerowane dane; pracownicy, których suma umiejętności jest większa od trzeciego kwartyla, otrzymują losowe wynagrodzenie z przedziału $[70, 99]$. 
 
     \par Wykres ten można również zidentyfikować jako wykres:
     \begin{enumerate}
@@ -492,13 +520,12 @@
     \par Przeanalizowane wyniki optymalizacji przez skrypt \verb|optimizer.py| zostały przeanalizowane przez \verb|analyzer.py|. Plik posiada nazwę jaką nadał mu użytkownik w momencie uruchamiania skryptu analizującego. Dane z analizy zostały podzielone na dwa arkusze. Pierwszy - \verb|Statystyki| zawiera tabele z podstawową analizą statystyczną w formie tabeli i drugi - \verb|Wykresy| zawiera histogramy, macierz korelacji i wykres rozrzutu.
 
     \subsection{Analiza porównawcza danych z tabeli}
-    \par Tabela przedstawiona na rysunku \ref{fig:tabela_analiza_wybrani} przedstawia zestawienie statystyk obliczonych przez skrypt \verb|analyzer.py| omówiony w sekcji \ref{sec:analyzer}. Struktura danych w tabeli została już opisana w przypadku populacji przy omawianiu tabeli: \ref{fig:tabela_analiza}, strona \pageref{fig:tabela_analiza}.
+    \par Tabela przedstawiona na rysunku \ref{fig:tabela_analiza_wybrani} przedstawia zestawienie statystyk obliczonych przez skrypt \verb|analyzer.py|. Struktura danych w tabeli została już opisana w przypadku populacji przy omawianiu tabeli \figrefnote{fig:tabela_analiza}.
 
     \begin{figure}[H]
         \centering
         \includegraphics[width=\linewidth]{chapters/Images/analiza_tabela_wybrani.png}
-        \cprotect\caption{Tabela wybranego zespołu projektowego po analizie}
-        \textit{Źródło: opracowanie własne} 
+        \cprotect\caption{Tabela wybranego zespołu projektowego po analizie\\ Źródło:\textit{ opracowanie własne}}
         \label{fig:tabela_analiza_wybrani}
     \end{figure}
 
@@ -506,7 +533,7 @@
     \begin{description}
         \item[Rozmiar populacji\label{itm:count_2}]  - Pokazuje rozmiar populacji i potwierdza, że analiza została przeprowadzona na pełnym zestawie danych, otrzymanym ze skryptu \verb|optimizer.py| pracującego z zestawem danych z pliku \verb|pracownicy.csv|.
         
-        \item[Średnia\label{itm:mean_2}] - Średnia z każdej umiejętności dla wybranych pracowników wynosi od $0,48$ do $0,57$. Te wartości są wyższe dla każdej kategorii w porównaniu do populacji. Podobnie w przypadku średniej sumy umiejętności, optymalny zespół posiada wyższą ogólną średnią niż populacja pracowników. Dodatkowo, wybrany zespół oczekuje średnio mniejszego wynagrodzenia, niż populacja w firmie. Wybrany zespół jest nie tylko lepszy pod kątem umiejętności, ale też wymaga mniejszych funduszy, co jest korzystne dla firmy. (\textit{Tabela populacji po analizie:} \ref{fig:tabela_analiza})
+        \item[Średnia\label{itm:mean_2}] - Średnia z każdej umiejętności dla wybranych pracowników wynosi od $0,48$ do $0,57$. Te wartości są wyższe dla każdej kategorii w porównaniu do populacji. Podobnie w przypadku średniej sumy umiejętności, optymalny zespół posiada wyższą ogólną średnią niż populacja pracowników. Dodatkowo, wybrany zespół oczekuje średnio mniejszego wynagrodzenia, niż populacja w firmie. Wybrany zespół jest nie tylko lepszy pod kątem umiejętności, ale też wymaga mniejszych funduszy, co jest korzystne dla firmy.
         
         \item[Odchylenie standardowe\label{itm:std_2}] - Odchylenie std. dla grupy wybranych pracowników w poszczególnych umiejętnościach jest na podobnym poziomie, co u populacji. Jednak w przypadku sumy umiejętności i wynagrodzenia jest znacznie niższe ($8$ razy mniejsze dla sumy, $12$ razy mniejsze dla wynagrodzenia), co oznacza, że pracownicy w optymalnym zespole mają podobny poziom umiejętności oraz oczekują podobnego wynagrodzenia.
         
@@ -525,14 +552,13 @@
     \par Porównanie wyników z analizy populacji oraz analizy optymalnego zespołu pokazuje, że mimo ogólnie lepszych statystyk, optymalny zespół może nie posiadać pracowników z bardzo wysoką generalną ekspertyzą. Warunek utrzymania niskiego kosztu pozwolił dobrać pracowników, nieoczekujących wysokiego wynagrodzenia, ale kosztem eksperckich umiejętności w zespole.
     
     \subsection{Histogramy}
-    \par Histogramy przedstawiają częstotliwość występowania pracowników o danych poziomach umiejętności, wynagrodzenia czy sumy umiejętności. Podobne wykresy zostały opisane w sekcji \ref{subsec:histogramy} i następująca analiza będzie porównywać wyniki do analizy przeprowadzonej na stronie \pageref{subsec:histogramy}.
+    \par Histogramy przedstawiają częstotliwość występowania pracowników o danych poziomach umiejętności, wynagrodzenia czy sumy umiejętności. Podobne wykresy zostały opisane wcześniej i następująca analiza będzie porównywać wyniki do analizy przeprowadzonej w sekcji \refnote{subsec:histogramy}.
     
         \subsubsection{Umiejętności w kategorii Angular optymalnego zespołu}
         \begin{figure}[H]
             \centering
             \includegraphics[width=\linewidth]{chapters/Images/hist_angular_optimal.png}
-            \cprotect\caption{Histogram umiejętności w kategorii Angular dla optymalnego zespołu}
-            \textit{Źródło: opracowanie własne} 
+            \cprotect\caption{Histogram umiejętności w kategorii Angular dla optymalnego zespołu\\ Źródło:\textit{ opracowanie własne}}
             \label{fig:hist_angular_optimal}
         \end{figure}
 
@@ -548,8 +574,7 @@
         \begin{figure}[H]
             \centering
             \includegraphics[width=\linewidth]{chapters/Images/hist_java_optimal.png}
-            \cprotect\caption{Histogram umiejętności w kategorii Java} dla optymalnego zespołu
-            \textit{Źródło: opracowanie własne} 
+            \cprotect\caption{Histogram umiejętności w kategorii Java dla optymalnego zespołu\\ Źródło:\textit{ opracowanie własne}}
             \label{fig:hist_java_optimal}
         \end{figure}
 
@@ -564,8 +589,7 @@
         \begin{figure}[H]
             \centering
             \includegraphics[width=\linewidth]{chapters/Images/hist_uiux_optimal.png}
-            \cprotect\caption{Histogram umiejętności w kategorii UI/UX dla optymalnego zespołu}
-            \textit{Źródło: opracowanie własne} 
+            \cprotect\caption{Histogram umiejętności w kategorii UI/UX dla optymalnego zespołu\\ Źródło:\textit{ opracowanie własne}}
             \label{fig:hist_uiux_optimal}
         \end{figure}
 
@@ -580,8 +604,7 @@
         \begin{figure}[H]
             \centering
             \includegraphics[width=\linewidth]{chapters/Images/hist_sql_optimal.png}
-            \cprotect\caption{Histogram umiejętności w kategorii SQL dla optymalnego zespołu}
-            \textit{Źródło: opracowanie własne} 
+            \cprotect\caption{Histogram umiejętności w kategorii SQL dla optymalnego zespołu\\ Źródło:\textit{ opracowanie własne}}
             \label{fig:hist_sql_optimal}
         \end{figure}
 
@@ -596,8 +619,7 @@
         \begin{figure}[H]
             \centering
             \includegraphics[width=\linewidth]{chapters/Images/hist_ang_optimal.png}
-            \cprotect\caption{Histogram umiejętności w kategorii Znajomość języka angielskiego dla optymalnego zespołu}
-            \textit{Źródło: opracowanie własne} 
+            \cprotect\caption{Histogram umiejętności w kategorii Znajomość języka angielskiego dla optymalnego zespołu\\ Źródło:\textit{ opracowanie własne}}
             \label{fig:hist_ang_optimal}
         \end{figure}
 
@@ -612,8 +634,7 @@
         \begin{figure}[H]
             \centering
             \includegraphics[width=\linewidth]{chapters/Images/hist_suma_optimal.png}
-            \cprotect\caption{Histogram umiejętności w kategorii Suma umiejętności dla optymalnego zespołu}
-            \textit{Źródło: opracowanie własne} 
+            \cprotect\caption{Histogram umiejętności w kategorii Suma umiejętności dla optymalnego zespołu\\ Źródło:\textit{ opracowanie własne}}
             \label{fig:hist_suma_optimal}
         \end{figure}
 
@@ -628,8 +649,7 @@
         \begin{figure}[H]
             \centering
             \includegraphics[width=\linewidth]{chapters/Images/hist_wynagrodzenie_optimal.png}
-            \cprotect\caption{Histogram umiejętności w kategorii Wynagrodzenia dla optymalnego zespołu}
-            \textit{Źródło: opracowanie własne} 
+            \cprotect\caption{Histogram umiejętności w kategorii Wynagrodzenia dla optymalnego zespołu\\ Źródło:\textit{ opracowanie własne}}
             \label{fig:hist_wynagrodzenie_optimal}
         \end{figure}
 
@@ -644,14 +664,11 @@
     \begin{figure}[H]
         \centering
         \includegraphics[width=\linewidth]{chapters/Images/korelacja_optimal.png}
-        \cprotect\caption{Macierz korelacji danych}
-        \textit{Źródło: opracowanie własne} 
+        \cprotect\caption{Macierz korelacji danych\\ Źródło:\textit{ opracowanie własne}}
         \label{fig:korelacja_optimal}
     \end{figure}
 
-    \par Ponownie wykorzystano macierz korelacji do przedstawienia związków między poszczególnymi umiejętnościami, ich sumą, a wynagrodzeniem. Analiza macierzy ma pomóc w ustaleniu czy dobór optymalnego zespołu jest skuteczniejszy dzięki niektórym korelacjom między umiejętnościami.
-
-    \par Znaczenie wartości na macierzy zostało opisane w sekcji \ref{subsec:korelacja} na stronie \pageref{subsec:korelacja}.
+    \par Ponownie wykorzystano macierz korelacji do przedstawienia związków między poszczególnymi umiejętnościami, ich sumą, a wynagrodzeniem. Analiza macierzy ma pomóc w ustaleniu czy dobór optymalnego zespołu jest skuteczniejszy dzięki niektórym korelacjom między umiejętnościami. Znaczenie wartości na macierzy zostało opisane w sekcji \refnote{subsec:korelacja}.
 
     \par W przypadku korelacji między poszczególnymi umiejętnościami wartości są zawsze bliskie zeru lub ujemne, a co za tym idzie nie oddziałują na siebie albo oddziałują na siebie negatywnie. W praktyce oznacza to, że posiadanie umiejętności np. z kategorii Angular nie oddziałuje na umiejętności z kategorii SQL (korelacja na poziomie $0,0051$) i na odwrót. Negatywna korelacja między kategorią Angular i kategorią UI/UX oznacza, że posiadanie wysokich umiejętności w jednym wiąże się z posiadaniem niskich umiejętności w drugim (korelacja na poziomie $-0,61$). W macierzy korelacji populacji, poszczególne umiejętności nie oddziaływały na siebie prawie w ogóle.
     
@@ -665,14 +682,13 @@
     \begin{figure}[H]
         \centering
         \includegraphics[width=\linewidth]{chapters/Images/rozrzut_optimal.png}
-        \cprotect\caption{Wykres rozrzutu Wynagrodzenie vs Suma umiejętności}
-        \textit{Źródło: opracowanie własne} 
+        \cprotect\caption{Wykres rozrzutu Wynagrodzenie vs Suma umiejętności\\ Źródło:\textit{ opracowanie własne}}
         \label{fig:scatter_plot_optimal}
     \end{figure}
 
     \par Ostatnia część analizy bazuje na wykresie rozrzutu przedstawiającego stosunek sumy umiejętności do wynagrodzenia w optymalnym zespole. Oś X przedstawia sumę umiejętności a oś Y wynagrodzenie. Punkty na wykresie to każdy z pracowników w optymalnym zespole.
 
-    \par Wykres został bardzo widocznie podzielony prawie "na pół". Jedyny klaster na wykresie obejmuje obszar na osi X od $2,4$ do $2,7$ i na osi Y obszar od $30$ do $35$. Nie jest widoczna silna zależność między sumą umiejętności, a wynagrodzeniem, co sugeruje, że wybrani pracownicy posiadają wysoką sumę umiejętności, której stosunek do wynagrodzenia jest minimalny. Nie zaobserwowano również żadnej tendencji wskazującej na znaczy wzrost wynagrodzenia względem sumy umiejętności. W zestawieniu z wykresem rozrzutu populacji, można stwierdzić że pracownicy optymalnego zespołu "mieszczą się" w klastrze pierwszy wykresu rozrzutu populacji (\textit{Wykres rozrzutu populacji} \ref{subsec:scatter}).
+    \par Wykres został bardzo widocznie podzielony prawie "na pół". Jedyny klaster na wykresie obejmuje obszar na osi X od $2,4$ do $2,7$ i na osi Y obszar od $30$ do $35$. Nie jest widoczna silna zależność między sumą umiejętności, a wynagrodzeniem, co sugeruje, że wybrani pracownicy posiadają wysoką sumę umiejętności, której stosunek do wynagrodzenia jest minimalny. Nie zaobserwowano również żadnej tendencji wskazującej na znaczy wzrost wynagrodzenia względem sumy umiejętności. W zestawieniu z wykresem rozrzutu populacji, można stwierdzić że pracownicy optymalnego zespołu "mieszczą się" w klastrze pierwszy wykresu rozrzutu populacji (Wykres rozrzutu populacji \figrefnote{fig:scatter_plot}).
 
     \par Wykres ten można również zidentyfikować jako wykres:
     \begin{enumerate}
